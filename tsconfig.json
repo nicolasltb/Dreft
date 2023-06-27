@@ -31,11 +31,14 @@
     "paths": {
       "@middlewares/*": [ "./src/middlewares/*" ],
       "@routes/*": [ "src/routes/*" ],
+      "@loaders/*": [ "src/loaders/*" ],
+      "@use-cases/*": [ "src/use-cases/*" ],
       "@utils/*": [ "src/utils/*" ]
     }
   },
   "include": [
     "./src/**/*.ts",
+    "./src/**/**/*.ts",
     "./src/**/*.tsx",
     "./__tests__/**/*.ts",
     "./__tests__/**/*.tsx"
