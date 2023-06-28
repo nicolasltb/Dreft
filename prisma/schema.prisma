@@ -11,12 +11,12 @@ datasource db {
 }
 
 model Ticket {
-    id          Int      @id @default(autoincrement())
+    id          Int      @id @unique @default(autoincrement())
     subject     String
     description String
     status      Int
     priority    Int
-    agent       Agent?    @relation("agent", fields: [agent_id], references: [id])
+    agent       Agent?   @relation("agent", fields: [agent_id], references: [id])
     agent_id    Int?
     created_at  DateTime @default(now())
     updated_at  DateTime @updatedAt
@@ -25,7 +25,7 @@ model Ticket {
 }
 
 model Agent {
-    id               Int      @id @default(autoincrement())
+    id               Int      @id @unique @default(autoincrement())
     name             String
     email            String   @unique
     password         String
@@ -38,7 +38,7 @@ model Agent {
 }
 
 model Customer {
-    id         Int      @id @default(autoincrement())
+    id         Int      @id @unique @default(autoincrement())
     name       String
     email      String   @unique
     password   String
@@ -49,7 +49,7 @@ model Customer {
 }
 
 model User {
-    id         Int      @id @default(autoincrement())
+    id         Int      @id @unique @default(autoincrement())
     name       String
     email      String   @unique
     password   String
